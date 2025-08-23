@@ -4,9 +4,9 @@
   <div class="announcement-bar color-{{ section.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
     {%- if section.settings.message != blank -%}
       <div class="page-width">
-        <p class="announcement-bar__message h5">
-          <span>{{ section.settings.message | escape }}</span>
-        </p>
+        <div class="announcement-bar__message h5">
+          {{ section.settings.message }}
+        </div>
       </div>
     {%- endif -%}
   </div>
