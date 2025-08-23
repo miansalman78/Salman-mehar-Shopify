@@ -1,0 +1,67 @@
+{{ 'section-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.show_announcement -%}
+  <div class="announcement-bar color-{{ section.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
+    {%- if section.settings.message != blank -%}
+      <div class="page-width">
+        <p class="announcement-bar__message h5">
+          <span>{{ section.settings.message | escape }}</span>
+        </p>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "default": false,
+      "label": "Show announcement"
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "default": "Welcome to our store",
+      "label": "Message"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "accent-1",
+      "label": "Color scheme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}

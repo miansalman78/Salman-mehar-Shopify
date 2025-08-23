@@ -1,0 +1,39 @@
+.announcement-bar {
+  border: 0;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.announcement-bar__message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 4rem;
+  font-size: 1.4rem;
+  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  word-break: break-word;
+}
+
+.announcement-bar__message h1,
+.announcement-bar__message h2,
+.announcement-bar__message h3,
+.announcement-bar__message h4,
+.announcement-bar__message h5,
+.announcement-bar__message h6 {
+  margin: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar__message {
+    font-size: 1.2rem;
+    height: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .announcement-bar__message {
+    font-size: 1.5rem;
+  }
+}
