@@ -3,10 +3,17 @@
   position: relative;
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+  width: 100%;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .tisso-header {
   padding: 0;
+  display: block !important;
+  visibility: visible !important;
+  width: 100%;
 }
 
 .tisso-header__top-bar {
