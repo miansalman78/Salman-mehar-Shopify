@@ -1,0 +1,56 @@
+<svg
+  aria-hidden="true"
+  focusable="false"
+  class="spinner {{ class }}"
+  viewBox="0 0 66 66"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    class="path"
+    fill="none"
+    stroke-width="6"
+    stroke-linecap="round"
+    cx="33"
+    cy="33"
+    r="30"
+  ></circle>
+</svg>
+
+<style>
+  .spinner {
+    animation: rotator 1.4s linear infinite;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  .spinner .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    stroke: rgb(var(--color-foreground));
+    animation: dash 1.4s ease-in-out infinite;
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      transform: rotate(450deg);
+    }
+  }
+</style>

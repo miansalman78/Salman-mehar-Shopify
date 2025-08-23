@@ -1,0 +1,52 @@
+{%- liquid
+  assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, TikTok, Tumblr, Snapchat, YouTube, Vimeo' | split: ', '
+-%}
+
+{%- capture social_icons -%}
+  {%- for social in social_accounts -%}
+    {%- assign social_handle = social | handleize -%}
+    {%- capture social_link -%}social_{{ social_handle }}_link{%- endcapture -%}
+    {%- capture social_icon -%}icon-{{ social_handle }}{%- endcapture -%}
+    {%- if settings[social_link] != blank -%}
+      <li class="list-social__item">
+        <a
+          href="{{ settings[social_link] }}"
+          class="link list-social__link"
+          {% if settings.social_new_tab %}
+            target="_blank"
+            rel="noopener"
+          {% endif %}
+        >
+          {%- liquid
+            case social
+            when 'Facebook'
+              render 'icon-facebook'
+            when 'Twitter'
+              render 'icon-twitter'
+            when 'Pinterest'
+              render 'icon-pinterest'
+            when 'Instagram'
+              render 'icon-instagram'
+            when 'TikTok'
+              render 'icon-tiktok'
+            when 'Tumblr'
+              render 'icon-tumblr'
+            when 'Snapchat'
+              render 'icon-snapchat'
+            when 'YouTube'
+              render 'icon-youtube'
+            when 'Vimeo'
+              render 'icon-vimeo'
+          -%}
+          <span class="visually-hidden">{{ social }}</span>
+        </a>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- if social_icons != blank -%}
+  <ul class="{{ class }} list-unstyled" role="list">
+    {{ social_icons }}
+  </ul>
+{%- endif -%}

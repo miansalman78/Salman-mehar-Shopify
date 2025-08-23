@@ -1,0 +1,20 @@
+{% comment %}
+  The contents of the index.liquid template can be found in /sections/index.liquid
+{% endcomment %}
+
+{% section 'custom-banner' %}
+{% section 'custom-grid' %}
+
+{% comment %}
+  Additional sections can be added here for the homepage
+{% endcomment %}
+
+<style>
+  .template-index {
+    min-height: 100vh;
+  }
+  
+  .template-index .section + .section {
+    margin-top: var(--spacing-sections, 0);
+  }
+</style>

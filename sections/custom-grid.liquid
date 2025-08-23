@@ -1,0 +1,284 @@
+{{ 'section-custom-grid.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-grid.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="tisso-grid color-{{ section.settings.color_scheme }} gradient" id="products">
+  <div class="page-width section-{{ section.id }}-padding isolate">
+    <div class="tisso-grid__header">
+      <h2 class="tisso-grid__title">Tisso vison in the wild</h2>
+    </div>
+
+    <div class="tisso-grid__container">
+      <!-- Real products from CSV -->
+      <div class="tisso-grid__item">
+        <div class="tisso-grid__product-card" data-product-id="1">
+          <div class="tisso-grid__image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0873/7842/8199/files/putting-on-your-shoes_925x_f4184c9e-c505-498c-8c43-6c1e9545a859.jpg?v=1715108788" alt="LED High Tops" class="tisso-grid__image" loading="lazy">
+            <button class="tisso-grid__popup-trigger" data-product-handle="led-high-tops" aria-label="View LED High Tops">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="white" stroke="#000" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tisso-grid__item">
+        <div class="tisso-grid__product-card" data-product-id="2">
+          <div class="tisso-grid__image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0873/7842/8199/files/woman-in-the-city_925x_fa6b306e-cdb3-4593-94a7-91ba71d3e059.jpg?v=1715108785" alt="Striped Skirt and Top" class="tisso-grid__image" loading="lazy">
+            <button class="tisso-grid__popup-trigger" data-product-handle="striped-skirt-and-top" aria-label="View Striped Skirt and Top">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="white" stroke="#000" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tisso-grid__item">
+        <div class="tisso-grid__product-card" data-product-id="3">
+          <div class="tisso-grid__image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0873/7842/8199/files/womens-red-t-shirt_925x_5cbc9e3a-3e59-4707-aa55-d1483ba0349a.jpg?v=1715108782" alt="Red Sports Tee" class="tisso-grid__image" loading="lazy">
+            <button class="tisso-grid__popup-trigger" data-product-handle="red-sports-tee" aria-label="View Red Sports Tee">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="white" stroke="#000" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tisso-grid__item">
+        <div class="tisso-grid__product-card" data-product-id="4">
+          <div class="tisso-grid__image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0873/7842/8199/files/man-adjusts-blue-tuxedo-bowtie_925x_55a49e12-d54b-488e-b7a0-ea4c201eb01f.jpg?v=1715108779" alt="Blue Silk Tuxedo" class="tisso-grid__image" loading="lazy">
+            <button class="tisso-grid__popup-trigger" data-product-handle="blue-silk-tuxedo" aria-label="View Blue Silk Tuxedo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="white" stroke="#000" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tisso-grid__item">
+        <div class="tisso-grid__product-card" data-product-id="5">
+          <div class="tisso-grid__image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0873/7842/8199/files/urban-fashion_925x_04757033-09c4-48c7-99e6-b2cb8ab8a7f9.jpg?v=1715108776" alt="Olive Green Jacket" class="tisso-grid__image" loading="lazy">
+            <button class="tisso-grid__popup-trigger" data-product-handle="olive-green-jacket" aria-label="View Olive Green Jacket">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="white" stroke="#000" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tisso-grid__item">
+        <div class="tisso-grid__product-card" data-product-id="6">
+          <div class="tisso-grid__image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0873/7842/8199/files/smiling-woman-poses_925x_d4c2de74-74a9-4ace-9b9c-7cabd5d9b71d.jpg?v=1715108773" alt="White Cotton Shirt" class="tisso-grid__image" loading="lazy">
+            <button class="tisso-grid__popup-trigger" data-product-handle="white-cotton-shirt" aria-label="View White Cotton Shirt">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="white" stroke="#000" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Popup Modal -->
+<div class="custom-popup" id="productPopup" style="display: none;">
+  <div class="custom-popup__overlay"></div>
+  <div class="custom-popup__content">
+    <button class="custom-popup__close" aria-label="Close popup">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <div class="custom-popup__product-info">
+      <div class="custom-popup__image-wrapper">
+        <img class="custom-popup__image" src="" alt="" loading="lazy">
+      </div>
+      
+      <div class="custom-popup__details">
+        <h3 class="custom-popup__title"></h3>
+        <div class="custom-popup__price"></div>
+        <div class="custom-popup__description"></div>
+        
+        <form class="custom-popup__form" action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data">
+          <div class="custom-popup__variants"></div>
+          
+          <div class="custom-popup__quantity">
+            <label for="popup-quantity">Quantity:</label>
+            <input type="number" id="popup-quantity" name="quantity" value="1" min="1" class="custom-popup__quantity-input">
+          </div>
+          
+          <input type="hidden" name="id" class="custom-popup__variant-id">
+          
+          <button type="submit" class="custom-popup__add-to-cart button button--primary">
+            <span>ADD TO CART</span>
+            <div class="loading-overlay__spinner hidden">
+              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Grid",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Featured Products",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Grid",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

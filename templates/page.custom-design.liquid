@@ -1,0 +1,35 @@
+{% comment %}
+  Custom page template that showcases the banner and grid sections
+  This template demonstrates the pixel-perfect implementation from the Figma design
+{% endcomment %}
+
+<div class="custom-page-wrapper">
+  {% section 'custom-banner' %}
+  {% section 'custom-grid' %}
+</div>
+
+{% style %}
+  .custom-page-wrapper {
+    min-height: 100vh;
+  }
+  
+  .custom-page-wrapper .section {
+    padding: 0;
+  }
+  
+  .custom-page-wrapper .custom-banner {
+    margin-bottom: 0;
+  }
+  
+  .custom-page-wrapper .custom-grid {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .custom-page-wrapper .custom-grid {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+{% endstyle %}

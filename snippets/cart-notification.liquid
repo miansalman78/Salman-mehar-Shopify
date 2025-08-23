@@ -1,0 +1,137 @@
+<cart-notification>
+  <div class="cart-notification-wrapper page-width">
+    <div
+      id="cart-notification"
+      class="cart-notification focus-inset color-{{ settings.cart_notification_color_scheme }} gradient"
+      aria-modal="true"
+      aria-label="{{ 'general.cart.item_added' | t }}"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div class="cart-notification__header">
+        <h2 class="cart-notification__heading caption-large text-body">
+          <svg
+            class="icon icon-checkmark"
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 12 9"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.35.643a.5.5 0 01.006.707L4.417 8.34a.5.5 0 01-.708.001L.643 5.275a.5.5 0 11.714-.693L4.063 7.234 10.643.649a.5.5 0 01.707-.006z"
+              fill="currentColor"
+            />
+          </svg>
+          {{ 'general.cart.item_added' | t }}
+        </h2>
+        <button
+          type="button"
+          class="cart-notification__close modal__close-button link link--text focus-inset"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          <svg class="icon icon-close" aria-hidden="true" focusable="false">
+            <use href="#icon-close">
+          </svg>
+        </button>
+      </div>
+      <div id="cart-notification-product" class="cart-notification-product"></div>
+      <div class="cart-notification__links">
+        <a
+          href="{{ routes.cart_url }}"
+          id="cart-notification-button"
+          class="button button--secondary button--full-width"
+        >
+          {{ 'general.cart.view_cart' | t }}
+        </a>
+        <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
+          <button class="button button--primary button--full-width" name="add" type="submit">
+            {{ 'general.cart.checkout' | t }}
+          </button>
+        </form>
+        <button type="button" class="link button-label">
+          {{ 'general.continue_shopping' | t }}
+        </button>
+      </div>
+    </div>
+  </div>
+</cart-notification>
+
+<style>
+  .cart-notification {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 5rem;
+    max-height: calc(100vh - 5rem);
+    width: 35rem;
+    border: 0;
+    box-shadow: var(--popup-shadow);
+    border-radius: var(--popup-corner-radius);
+    z-index: 101;
+  }
+
+  .cart-notification.animate {
+    animation: animateMenuOpen var(--duration-default) ease;
+  }
+
+  .cart-notification.active {
+    display: block;
+  }
+
+  .cart-notification__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.5rem 3.5rem 1.5rem;
+  }
+
+  .cart-notification__heading {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .cart-notification__heading .icon {
+    width: 1.3rem;
+    height: 1rem;
+  }
+
+  .cart-notification__close {
+    margin: 0;
+    padding: 0;
+  }
+
+  .cart-notification-product {
+    padding: 0 3.5rem;
+  }
+
+  .cart-notification__links {
+    padding: 1.5rem 3.5rem 3.5rem;
+    text-align: center;
+  }
+
+  .cart-notification__links > * + * {
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .cart-notification {
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-height: 100%;
+      border-radius: 0;
+    }
+
+    .cart-notification__header,
+    .cart-notification-product,
+    .cart-notification__links {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+</style>

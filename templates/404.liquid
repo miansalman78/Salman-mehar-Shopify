@@ -1,0 +1,42 @@
+<div class="template-404 page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="center">
+    <h1 class="title title--primary">
+      {{ 'templates.404.title' | t }}
+    </h1>
+    <p class="large-up-text-center">
+      {{ 'templates.404.subtext' | t }}
+    </p>
+    <a href="{{ routes.root_url }}" class="button">
+      {{ 'general.continue_shopping' | t }}
+    </a>
+  </div>
+</div>
+
+<style>
+  .template-404 {
+    text-align: center;
+    padding: 5rem 0;
+  }
+  
+  .template-404 .title {
+    font-size: 8rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: rgb(var(--color-foreground));
+  }
+  
+  .template-404 p {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .template-404 .title {
+      font-size: 6rem;
+    }
+    
+    .template-404 p {
+      font-size: 1.6rem;
+    }
+  }
+</style>

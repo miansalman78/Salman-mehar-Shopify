@@ -1,0 +1,294 @@
+.tisso-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 60rem;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+.tisso-banner__icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tisso-banner__icons .icon-decoration {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
+}
+
+.tisso-banner__icons .icon-decoration:nth-child(1) {
+  top: 10%;
+  left: 15%;
+  transform: rotate(-15deg);
+}
+
+.tisso-banner__icons .icon-decoration:nth-child(2) {
+  top: 20%;
+  right: 20%;
+  transform: rotate(25deg);
+}
+
+.tisso-banner__icons .icon-decoration:nth-child(3) {
+  bottom: 30%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
+.tisso-banner__icons .icon-decoration:nth-child(4) {
+  bottom: 15%;
+  right: 15%;
+  transform: rotate(-30deg);
+}
+
+.tisso-banner__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  z-index: 2;
+  padding-left: 5%;
+}
+
+.tisso-banner__box {
+  text-align: left;
+  max-width: 50rem;
+  padding: 4rem 0;
+}
+
+.tisso-banner__title {
+  margin: 0 0 2rem 0;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #000;
+  border: 3px solid #000;
+  padding: 1rem 2rem;
+  display: inline-block;
+  background: #fff;
+}
+
+.tisso-banner__subtitle {
+  margin: 0 0 3rem 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #333;
+  max-width: 45rem;
+}
+
+.tisso-banner__cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2.4rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s ease;
+}
+
+.tisso-banner__cta-button:hover {
+  background: #333;
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .tisso-banner {
+    min-height: 50rem;
+  }
+  
+  .tisso-banner__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+  }
+  
+  .tisso-banner__box {
+    text-align: center;
+  }
+  
+  .tisso-banner__title {
+    font-size: 3.6rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .tisso-banner__subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .tisso-banner__icons .icon-decoration {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.button--primary {
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+.button--primary:hover {
+  background: #333;
+  border-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.button--secondary {
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.button--secondary:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.animated-button:focus {
+  animation: pulse 1.5s infinite;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 749px) {
+  .custom-banner {
+    min-height: 40rem;
+  }
+  
+  .custom-banner__box {
+    padding: 3rem 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .custom-banner__heading {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .custom-banner__text {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .custom-banner__buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .animated-button {
+    width: 100%;
+    max-width: 28rem;
+    padding: 1.4rem 2rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .custom-banner {
+    min-height: 45rem;
+  }
+  
+  .custom-banner__heading {
+    font-size: 4rem;
+  }
+  
+  .custom-banner__text {
+    font-size: 1.7rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media screen and (min-width: 1200px) {
+  .custom-banner {
+    min-height: 60rem;
+  }
+  
+  .custom-banner__heading {
+    font-size: 5.6rem;
+  }
+  
+  .custom-banner__text {
+    font-size: 2rem;
+  }
+}
+
+/* Color scheme variations */
+.color-accent-1 .custom-banner__box {
+  background: rgba(var(--color-base-accent-1), 0.9);
+}
+
+.color-accent-2 .custom-banner__box {
+  background: rgba(var(--color-base-accent-2), 0.9);
+}
+
+.color-background-1 .custom-banner__box {
+  background: rgba(var(--color-base-background-1), 0.9);
+}
+
+.color-background-2 .custom-banner__box {
+  background: rgba(var(--color-base-background-2), 0.9);
+}
+
+.color-inverse .custom-banner__box {
+  background: rgba(var(--color-base-text), 0.9);
+  color: rgb(var(--color-base-background-1));
+}
+
+.color-inverse .custom-banner__heading {
+  color: rgb(var(--color-base-background-1));
+}
+
+.color-inverse .custom-banner__text {
+  color: rgba(var(--color-base-background-1), 0.8);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animated-button {
+    transition: none;
+  }
+  
+  .animated-button::before {
+    display: none;
+  }
+  
+  .animated-button:focus {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.animated-button:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}

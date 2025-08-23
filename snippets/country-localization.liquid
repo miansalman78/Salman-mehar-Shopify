@@ -1,0 +1,42 @@
+<div class="localization-selector">
+  <h2 class="visually-hidden" id="{{ localPosition }}Label">
+    {{ 'localization.country_label' | t }}
+  </h2>
+  <div class="disclosure">
+    <button
+      type="button"
+      class="disclosure__button localization-form__select localization-selector__button link link--text caption-large"
+      aria-expanded="false"
+      aria-controls="{{ localPosition }}List"
+      aria-describedby="{{ localPosition }}Label"
+    >
+      {{ localization.country.name }} ({{ localization.country.currency.iso_code }}
+      {% if localization.country.currency.symbol %}
+        {{ localization.country.currency.symbol }}
+      {% endif %})
+      {% render 'icon-caret' %}
+    </button>
+    <div class="disclosure__list-wrapper" hidden>
+      <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled">
+        {%- for country in localization.available_countries -%}
+          <li class="disclosure__item" tabindex="-1">
+            <a
+              class="link link--text disclosure__link caption-large{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset"
+              href="#"
+              {% if country.iso_code == localization.country.iso_code %}
+                aria-current="true"
+              {% endif %}
+              data-value="{{ country.iso_code }}"
+            >
+              {{ country.name }} ({{ country.currency.iso_code }}
+              {% if country.currency.symbol %}
+                {{ country.currency.symbol }}
+              {% endif %})
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+  </div>
+</div>
